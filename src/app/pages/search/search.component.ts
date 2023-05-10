@@ -24,9 +24,7 @@ export class SearchComponent implements OnInit{
   });
 
   submitForm() {
-    console.log(this.searchForm.value, 'searchform#');
     this.service.getSearchMovie(this.searchForm.value).subscribe((result) => {
-      console.log(result, 'searchmovie##');
       this.searchResult = result.results;
       
     });
@@ -35,7 +33,6 @@ export class SearchComponent implements OnInit{
 
   getMovie(id:any) {
     this.service.getMovieDetails(id).subscribe((result) => {
-      console.log(result, 'getmoviedetails#');
       this.getMovieDetailResult = result;
       
     });
